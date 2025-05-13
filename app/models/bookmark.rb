@@ -5,4 +5,3 @@ class Bookmark < ApplicationRecord
   validates :recipe_id, uniqueness: {scope: :category_i }
   validates :comment, length: { minimum: 6 }
 end
-less_than_or_equal_to
