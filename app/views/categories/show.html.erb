@@ -5,6 +5,7 @@
   <li>
     <h3> <%= bookmark.recipe.name %></h3>
     <p><%= bookmark.recipe.description %></p>
+    <p><%= bookmark.comment %></p>
     <%= button_to 'Delete', bookmark_path(bookmark), method: :delete  %>
   </li>
 </li>
