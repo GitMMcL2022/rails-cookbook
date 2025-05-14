@@ -6,8 +6,9 @@ class BookmarksController < ApplicationController
 
   def create
     @category = Category.find(params[:category_id])
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmarks.category = @category
+    #@bookmark = Bookmark.new(bookmark_params)
+    #@bookmark.category_id = @category.id
+    @bookmark = @category.bookmarks.create(bookmark_params)
 
     if @bookmark.save
       redirect_to category_path(@category)
@@ -17,6 +18,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to category_path(@bookmark.category)
   end
   private
 

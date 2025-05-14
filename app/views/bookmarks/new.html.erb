@@ -1,4 +1,4 @@
-<h1>Add a bookmark to <%= @category.name %> bookmark</h1>
+<h1>Add a bookmark to <%= @category.name %> bookmarks</h1>
 <%= simple_form_for [@category, @bookmark] do |f| %>
 <%= f.association :recipe %>
 <%= f.input :comment %>

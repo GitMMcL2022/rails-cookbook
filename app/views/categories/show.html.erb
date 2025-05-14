@@ -1,13 +1,14 @@
 <%= @category.name  %>
 
 <ul>
-<% @category.bookmark.each do |bookmark| %>
-<li>
-<h3> <%= book.recipe.name %></h3>
-<p><%= bookmark.recipe.description %></p>
-<%= link_to %>
-
-</li>>
-
+  <% @category.bookmarks.each do |bookmark| %>
+  <li>
+    <h3> <%= bookmark.recipe.name %></h3>
+    <p><%= bookmark.recipe.description %></p>
+    <%= button_to 'Delete', bookmark_path(bookmark), method: :delete  %>
+  </li>
+</li>
+<% end %>
+<%= link_to "add a recipe", new_category_bookmark_path(@category)  %>
 
 </ul>
