@@ -1,9 +1,35 @@
+<div class="navbar">
+  <%= image_tag "logo.png" %>
+
+  <div>
+    <%= link_to 'Home' %>
+    <%= link_to 'New Category' %>
+  </div>
+</div>/
+
+<div class="banner" style="background-image : url('<%= image_path "..assets/images/15 05 2025 MealBanner1.png"%>')">
+  <div>
+    <h1>CookBook</h1>
+    <h3>Save your favourite recipes</h3>
+    </div>
+  </div>
+
+<%= link_to 'New category', new_category_path %>
+<ul>
+  <% @categories.each do |category| %>
+  <li><%= link_to category.name, category_path(category) %></li>
+  <% end %>
+  </ul>
+
+
+
+
 <h1>Cook book</h1>
+<%= link_to 'New category', new_category_path %>
 <ul>
   <% @categories.each do |category| %>
     <li><%= category.name %></li>
-    <%= link_to "see category", category_path(category) %>
-
+    <%= link_to category.name, category_path(category) %>
   <% end %>
 </ul>
 <%= link_to "Add a category", new_category_path %>
